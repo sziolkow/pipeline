@@ -8,6 +8,11 @@ public class PipelineApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PipelineApplication.class, args);
+		CalculateSumVisitor calculateSumVisitor = new CalculateSumVisitor();
+		ComputableRule rule = new SimpleRule();
+
+		rule.accept(calculateSumVisitor);
+
 	}
 
 }
